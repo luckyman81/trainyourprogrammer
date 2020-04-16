@@ -4,6 +4,14 @@ using System.Linq;
 
 namespace CS_Aufgabe_136_LeastCommonMultiple
 {
+    /*
+     * Schreibe ein Programm zur Bestimmung des kgV zweier natürlicher Zahlen (siehe Beispiel zur kgV-Berechnung). Die Berechnung soll ohne Beteiligung des größten gemeinsamen Teilers erfolgen.
+
+       Beispielausgabe:
+       Zahl 1: 5
+       Zahl 2: 7
+
+       kgV: 35*/
     class Program
     {
         static void Main(string[] args)
@@ -23,7 +31,7 @@ namespace CS_Aufgabe_136_LeastCommonMultiple
 
             // Calculate LCM
             Console.WriteLine($"lcm({m},{n}) = {CalculateLCM(mFactors, nFactors)}");
-            
+            Console.ReadKey();
         }
 
         private static int CalculateLCM(List<int> mFactors, List<int> nFactors)

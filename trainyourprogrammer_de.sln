@@ -15,7 +15,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Aufgabe_270_PolarCoordin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Aufgabe_136_LeastCommonMultiple", "CS_Aufgabe_136_LeastCommonMultiple\CS_Aufgabe_136_LeastCommonMultiple.csproj", "{56850608-ECAE-4648-9100-E8A44884EFEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Aufgabe_258_Eulerzahl", "CS_Aufgabe_258_Eulerzahl\CS_Aufgabe_258_Eulerzahl.csproj", "{18A2E8F7-E268-4B38-BA8B-53152C6DEDAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Aufgabe_258_Eulerzahl", "CS_Aufgabe_258_Eulerzahl\CS_Aufgabe_258_Eulerzahl.csproj", "{18A2E8F7-E268-4B38-BA8B-53152C6DEDAC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Aufgabe_299_FermatQuadrate", "CS_Aufgabe_299_FermatQuadrate\CS_Aufgabe_299_FermatQuadrate.csproj", "{49741657-289A-4635-85E9-FCB747DD762B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Aufgabe_285_Tennisballs", "CS_Aufgabe_285_Tennisballs\CS_Aufgabe_285_Tennisballs.csproj", "{D37E06F4-0CC8-4E18-96C8-4696D324AC8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Aufgabe_261_Dreiecksberechnung", "CS_Aufgabe_261_Dreiecksberechnung\CS_Aufgabe_261_Dreiecksberechnung.csproj", "{1F8767DE-C9D4-4372-90E7-C580AEEB1CF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,18 @@ Global
 		{18A2E8F7-E268-4B38-BA8B-53152C6DEDAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18A2E8F7-E268-4B38-BA8B-53152C6DEDAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18A2E8F7-E268-4B38-BA8B-53152C6DEDAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49741657-289A-4635-85E9-FCB747DD762B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49741657-289A-4635-85E9-FCB747DD762B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49741657-289A-4635-85E9-FCB747DD762B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49741657-289A-4635-85E9-FCB747DD762B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D37E06F4-0CC8-4E18-96C8-4696D324AC8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D37E06F4-0CC8-4E18-96C8-4696D324AC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D37E06F4-0CC8-4E18-96C8-4696D324AC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D37E06F4-0CC8-4E18-96C8-4696D324AC8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8767DE-C9D4-4372-90E7-C580AEEB1CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8767DE-C9D4-4372-90E7-C580AEEB1CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8767DE-C9D4-4372-90E7-C580AEEB1CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8767DE-C9D4-4372-90E7-C580AEEB1CF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
