@@ -21,7 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Aufgabe_299_FermatQuadra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Aufgabe_285_Tennisballs", "CS_Aufgabe_285_Tennisballs\CS_Aufgabe_285_Tennisballs.csproj", "{D37E06F4-0CC8-4E18-96C8-4696D324AC8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Aufgabe_261_Dreiecksberechnung", "CS_Aufgabe_261_Dreiecksberechnung\CS_Aufgabe_261_Dreiecksberechnung.csproj", "{1F8767DE-C9D4-4372-90E7-C580AEEB1CF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Aufgabe_261_Dreiecksberechnung", "CS_Aufgabe_261_Dreiecksberechnung\CS_Aufgabe_261_Dreiecksberechnung.csproj", "{1F8767DE-C9D4-4372-90E7-C580AEEB1CF5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Aufgabe_90_Kreiszahl", "CS_Aufgabe_90_Kreiszahl\CS_Aufgabe_90_Kreiszahl.csproj", "{4A89BBA0-57AF-405D-8C24-3F98F09F15E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Aufgabe_239_LiouvilleSerie", "CS_Aufgabe_239_LiouvilleSerie\CS_Aufgabe_239_LiouvilleSerie.csproj", "{9C806B41-C76C-4402-B72B-8C23D80AC8F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{1F8767DE-C9D4-4372-90E7-C580AEEB1CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F8767DE-C9D4-4372-90E7-C580AEEB1CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F8767DE-C9D4-4372-90E7-C580AEEB1CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A89BBA0-57AF-405D-8C24-3F98F09F15E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A89BBA0-57AF-405D-8C24-3F98F09F15E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A89BBA0-57AF-405D-8C24-3F98F09F15E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A89BBA0-57AF-405D-8C24-3F98F09F15E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C806B41-C76C-4402-B72B-8C23D80AC8F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C806B41-C76C-4402-B72B-8C23D80AC8F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C806B41-C76C-4402-B72B-8C23D80AC8F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C806B41-C76C-4402-B72B-8C23D80AC8F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
