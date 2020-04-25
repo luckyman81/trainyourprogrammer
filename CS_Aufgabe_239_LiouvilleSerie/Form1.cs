@@ -12,15 +12,42 @@ using System.Windows.Shapes;
 
 namespace CS_Aufgabe_239_LiouvilleSerie
 {
+    /*
+     *  Die Liouville Serie ist eine Zahlenfolge, die nur aus den Zahlen +1 und -1 besteht.
+
+        Sie beginnt mit {1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1 ...}. Die ersten 10.000
+        Glieder sind in der Datei liouville_folge.txt gespeicher und könnten meinetwegen eingelesen werden.
+
+        Wer die Glieder der Folge L(n) selber berechnen will, muss wie folgt vorgehen:
+
+        1.) Per Definition wird L(1) => +1 gesetzt.
+        2.) Man zerlege n in all seine Primfaktoren (z. B. 14 = 2 * 7 oder 32 = 2 * 2 * 2 * 2 * 2).
+        3.) L(n) => +1, falls die Anzahl der Primfaktoren eine gerade Zahl ist, ansonsten L(n) => -1
+        (also L(14) => +1; L(32) => -1).
+
+        Man fasse nun L(n) als eine Schrittfolge auf, die eine Weg in der x-y-Ebene beschreibt.
+        Ausgehend von der Koordinate (x = 0, y = 0) wird zunächt der x-Wert um Eins erhöht
+        (entsprechend L(1) = 1), anschließend wird der y-Wert um Eins erniedrigt (entsprechend L(2) = -1)
+        und immer so fort bis zu L(nmax) (nmax von mir aus 10.000 oder mehr).
+
+        Der sich so ergebene Weg (siehe Bild 1 für nmax = 100.000, die Pixelfarbe wechselt zur besseren Illustration alle 10.000 Schritte)
+        ist gefühlsmäßig ein Zufallsweg (Random Walk). Ob dem wirklich so ist, weiß man bis heute nicht.
+
+        Die Programmieraufgabe bestehe nun darin, den Liouville-Weg graphisch darzustellen.
+
+        Falls jemand fragt "Was soll der Unfug?": Nun, man geht davon aus, das die Liouville Serie ein Schlüssel
+        zur Lösung der Riemann-Hypothese (RH) sein könnte. Bekanntlich sind zum Beweis bzw. zur Widerlegung der RH
+        noch immer eine Million US-Dollar ausgeschrieben.
+
+        Also, dann viel Erfolg! Ich drücke die Daumen für den Einemilliongewinn.*/
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
 
-            Width = 700;
-            Height = 700;
-
+            Width = 1000;
+            Height = 600;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -28,55 +55,76 @@ namespace CS_Aufgabe_239_LiouvilleSerie
             Graphics g = e.Graphics;
             int LiouX = 0;
             int LiouY = 0;
-
-            int startX = 100;
-            int startY = 100;
+            Random rnd = new Random();
+            int startX = Width/2;
+            int startY = Height/2;
             List<Point> points = new List<Point>();
 
-            using (StreamWriter stream = new StreamWriter(@"C:\Users\Stefan\Desktop\liouville.txt"))
+            List<int> primes = SieveEratosthenes(100000);
+            
+
+            Dictionary<Color, Point[]> dict = new Dictionary<Color, Point[]>();
+            
+            for (int n = 1; n < 100000; n++)
             {
-                for (int n = 1; n < 10000; n++)
+
+                short liou = Liouville(n, primes);
+                if (n % 2 == 0)
                 {
-                    short liou = Liouville(n, stream);
-                    if (n % 2 == 0)
-                    {
-                        LiouY = LiouY + liou;
-                    }
-                    else
-                    {
-                        LiouX = LiouX + liou;
-                    }
-                    points.Add(new Point(startX-LiouX,startY+ LiouY));
+                    LiouY = LiouY + liou;
+                }
+                else
+                {
+                    LiouX = LiouX + liou;
+                }                
+
+                points.Add(new Point(startX + LiouX, startY + LiouY));
+
+                if (n % 10000 == 0)
+                {
+                    Point[] ptsArr = new Point[points.Count];
+                    points.CopyTo(ptsArr);
+                    
+                     Color newColor = Color.FromArgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255));
+
+                    dict.Add(newColor, ptsArr);
+                    points.Clear();
+                    
+                    ;
                 }
             }
+            
+            DrawAxes(g);
 
-
-            g.DrawCurve(Pens.Red, points.ToArray());
-
-
+            foreach (var di in dict)
+            {
+                g.DrawCurve(new Pen(di.Key), di.Value);
+            }            
         }
 
+        private void DrawAxes(Graphics g)
+        {
+            g.DrawLine(Pens.Black, Width / 2, 0, Width / 2, Height);
+            g.DrawLine(Pens.Black, 0, Height / 2, Width, Height / 2);
+        }
 
-        private static short Liouville(int n, StreamWriter stream)
+        private static short Liouville(int n, List<int> primes)
         {
             if (n == 1)
             {
-                stream.WriteLine(1);
                 return 1;
             }
 
-            List<int> primes = SieveEratosthenes(n + 1);
+            //List<int> primes = SieveEratosthenes(n + 1);
 
             List<int> primefactors = PrimeDecomp(n, primes);
 
             if (primefactors.Count % 2 == 0)
             {
-                stream.WriteLine(1);
                 return 1;
             }
             else
             {
-                stream.WriteLine(-1);
                 return -1;
             }
 
@@ -86,7 +134,7 @@ namespace CS_Aufgabe_239_LiouvilleSerie
         {
             List<int> factors = new List<int>();
 
-            foreach (int i in primes)
+            foreach (int i in primes.Where(x => x <= m).ToList())
             {
                 while (m % i == 0)
                 {
